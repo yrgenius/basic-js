@@ -32,11 +32,8 @@ function dateSample(sampleActivity) {
     )
         return false;
 
-    // t = HALF_LIFE_PERIOD * Math.log2(MODERN_ACTIVITY / current);
-    // t = HALF_LIFE_PERIOD * 0.693 * (MODERN_ACTIVITY / current);
     t = Math.log(MODERN_ACTIVITY / current) / (0.693 / HALF_LIFE_PERIOD);
 
-    // return Math.abs(Math.ceil(t));
     return t != Infinity ? Math.abs(Math.ceil(t)) : false;
 }
 
